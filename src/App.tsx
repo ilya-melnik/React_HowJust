@@ -8,6 +8,7 @@ import {UnControlledRating} from "./components/UnControlledRating/UnControlledRa
 import UnControlledOnnOff from "./components/UnControlledOnOff/OnOff";
 
 
+
 function App() {
 
 
@@ -22,7 +23,8 @@ function onChange ()  {  setSwichOnn(!SwichOnn)}
             <OnnOff on={SwichOnn}
                     ChangeStatus={onChange}/>
 
-           < UnControlledOnnOff status={setSwichOnn}/>{SwichOnn.toString()}
+           <UnControlledOnnOff status={setSwichOnn}/>{SwichOnn.toString()}
+
 
 
 
