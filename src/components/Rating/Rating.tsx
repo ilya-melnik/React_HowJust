@@ -7,7 +7,7 @@ type StarType = {
     onClick: (value: ValueType) => void
 }
 
-type RatingPropsType = {
+export type RatingPropsType = {
     value: ValueType
     onClick: (value: ValueType) => void
 }

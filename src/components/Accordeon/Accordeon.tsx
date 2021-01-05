@@ -1,6 +1,6 @@
 import React from 'react';
 
-type AccordeonType = {
+export type AccordeonType = {
     titleValue: string
     collapsed: boolean
     onChange: (value: boolean) => void
@@ -17,7 +17,7 @@ function Accordion(props: AccordeonType) {
 
 }
 
-function AccordionTitle(props: any) {
+export function AccordionTitle(props: any) {
     return (
 
         <>
