@@ -2,14 +2,15 @@ import React, {useState} from 'react';
 import './App.css';
 import Accordion from "./components/Accordeon/Accordeon";
 import {Rating, ValueType} from "./components/Rating/Rating";
-import OnnOff from "./components/OnOff/OnOff";
-import UnControlldAccordeon from "./components/UnControlledAccordeon/UnControlldAccordeon";
+import {OnnOff} from "./components/OnOff/OnOff";
+
 import {UnControlledRating} from "./components/UnControlledRating/UnControlledRating";
-import UnControlledOnnOff from "./components/UnControlledOnOff/OnOff";
+import {UnControlledOnnOff} from "./components/UnControlledOnOff/OnOff";
+import {UnControlledAccordion} from "./components/UnControlledAccordeon/UnControlldAccordeon";
 
 
 
-function App() {
+function  App() {
 
 
     let [ratingValue, setRatingValue] = useState<ValueType>(3)
@@ -25,35 +26,15 @@ function onChange ()  {  setSwichOnn(!SwichOnn)}
 
            <UnControlledOnnOff status={setSwichOnn}/>{SwichOnn.toString()}
 
-
-
-
-
-
-
-
-
-
             <Accordion collapsed={colapsedAcordion}
                        onChange={ () => {setColapsedAcordion(!colapsedAcordion)} }
                        titleValue={"MENU"}/>
 
-
-
             <Rating value={ratingValue}
                     onClick={setRatingValue}/>
-
-
-            <UnControlldAccordeon titleValue={"Menu"}/>
-            <UnControlldAccordeon titleValue={"Users"}/>
-
+            <UnControlledAccordion titleValue={"Menu"}/>
+            <UnControlledAccordion titleValue={"Users"}/>
             <UnControlledRating/>
-            { /*<Rating value={1}/>
-            <Rating value={2}/>
-            <Rating value={1}/>
-            <Rating value={4}/>
-            <Rating value={2}/>*/}
-
         </div>
     );
 }

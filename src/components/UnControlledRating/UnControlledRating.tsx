@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-type StarType = {
+export type StarType = {
     value: 1|2|3|4|5
     selected: boolean
     setValue: (setValue: 1|2|3|4|5) => void
@@ -28,3 +28,4 @@ function Star(props: StarType) {
     return <span onClick={ ()=> {props.setValue(props.value)} }> {props.selected ? <b>star</b>: "star"}</span>
 
 }
+

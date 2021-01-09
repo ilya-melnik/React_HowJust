@@ -3,13 +3,13 @@ import React, {useState} from "react";
 
 
 
-type OnnOffType = {
+export type OnnOffType = {
   on: boolean
     ChangeStatus: (on: boolean)=> void
 }
 
 
- function OnnOff(props:OnnOffType){
+export function OnnOff(props:OnnOffType){
 
     const glav = {
         height: "100px",
@@ -55,5 +55,3 @@ type OnnOffType = {
             <div style={indicatorStyle}></div>
           </div>
 }
-
-export default OnnOff;

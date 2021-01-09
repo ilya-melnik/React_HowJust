@@ -1,10 +1,9 @@
 import React, {useState} from "react";
 
 export type ValueType = 0 | 1 | 2 | 3 | 4 | 5
-type StarType = {
-    value: ValueType
+export type StarType = {
     selected: boolean
-    onClick: (value: ValueType) => void
+    onClickCallback: () => void
 }
 
 export type RatingPropsType = {
@@ -13,20 +12,20 @@ export type RatingPropsType = {
 }
 
 export function Rating(props: RatingPropsType) {
+    let [value, setValue] = useState<ValueType>(props.value)
     return (
+
         <div>
-            <Star selected={props.value > 0} onClick={props.onClick} value={1}/>
-            <Star selected={props.value > 1} onClick={props.onClick} value={2}/>
-            <Star selected={props.value > 2} onClick={props.onClick} value={3}/>
-            <Star selected={props.value > 3} onClick={props.onClick} value={4}/>
-            <Star selected={props.value > 4} onClick={props.onClick} value={5}/>
+            <Star selected={value > 0} onClickCallback={() => {setValue(1) }} />
+            <Star selected={value > 1} onClickCallback={() => {setValue(2) }} />
+            <Star selected={value > 2} onClickCallback={() => {setValue(3) }} />
+            <Star selected={value > 3} onClickCallback={() => {setValue(4) }} />
+            <Star selected={value > 4} onClickCallback={() => {setValue(5) }} />
         </div>
     )
 }
 function Star(props: StarType) {
-    return <span onClick={() => {
-        props.onClick(props.value)
-    }}>
+    return <span onClick={props.onClickCallback}>
         {props.selected ? <b> star </b> : " star "}
     </span>
 
