@@ -1,27 +1,38 @@
 import React from 'react';
 
-export type AccordeonType = {
+export type AccordionType = {
     titleValue: string
     collapsed: boolean
     onChange: (value: boolean) => void
+    color?: string
 }
 
-function Accordion(props: AccordeonType) {
+function Accordion(props: AccordionType) {
 
     return (
         <div>
-            <AccordionTitle title={props.titleValue} onChange={ props.onChange} />
+            <AccordionTitle title={props.titleValue} onChange={ props.onChange} color={props.color} collapsed={props.collapsed}/> // ?
             { !props.collapsed && <AccordionBody/>}
         </div>
     )
 
 }
 
-export function AccordionTitle(props: any) {
+// ? \|/
+type  AccordionTitlePropsType = {
+    title: string
+    onChange: (value: boolean) => void
+    color?: string
+    collapsed: boolean
+
+
+}
+export function AccordionTitle(props: AccordionTitlePropsType) {
     return (
 
         <>
-            <h3 onClick={ () => {props.onChange()} }>{props.title}</h3>
+            <h3 style={{color: props.color ? props.color: 'red'}}
+                onClick={ () => {props.onChange(!props.collapsed)} }>{props.title}</h3>
         </>
     );
 }
@@ -39,3 +50,6 @@ function AccordionBody() {
 }
 
 export default Accordion;
+
+// не смог отобразить color <h3>props.title<> (запутался в пропсах)
+// Ругается на  onChange

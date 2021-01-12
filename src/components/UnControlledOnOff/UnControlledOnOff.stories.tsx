@@ -14,8 +14,15 @@ const Template: Story<OnnOffType> = (args) => <UnControlledOnnOff {...args} />;
 
 export const UnControlledOnnOff1 = Template.bind({});
 UnControlledOnnOff1.args = {
-   status: onn => {}
+    status: onn => {},
+    defaultValue: true
 };
 
-// сейчас добавилась функция которая изменяется по Cklik on UI (Не понимаю когда отображается так, всегда описывать ли в sb)
-// Нужно ли отображать захардкордженные значения, как ?
+export const UnControlledOnnOff2 = Template.bind({});
+UnControlledOnnOff2.args = {
+    status: onn => {},
+    defaultValue: false
+};
+
+
+

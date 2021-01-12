@@ -4,11 +4,12 @@ import React, {useState} from "react";
 export type OnnOffType = {
     //on: boolean
     status: (onn: boolean) => void
+    defaultValue?: boolean
 }
 
 
 export function UnControlledOnnOff(props: OnnOffType) {
-    let [on, setOn] = useState(false)
+    let [on, setOn] = useState(props.defaultValue ? props.defaultValue: false)
     const glav = {
         height: "100px",
         width: "200px",
