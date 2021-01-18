@@ -7,6 +7,7 @@ import {OnnOff} from "./components/OnOff/OnOff";
 import {UnControlledRating} from "./components/UnControlledRating/UnControlledRating";
 import {UnControlledOnnOff} from "./components/UnControlledOnOff/OnOff";
 import {UnControlledAccordion} from "./components/UnControlledAccordeon/UnControlldAccordeon";
+import {Input} from "./stories/Input";
 
 
 
@@ -21,6 +22,7 @@ function onChange ()  {  setSwichOnn(!SwichOnn)}
     return (
 
         <div className="App">
+            <Input/>
             <OnnOff on={SwichOnn}
                     ChangeStatus={onChange}/>
 
@@ -35,6 +37,7 @@ function onChange ()  {  setSwichOnn(!SwichOnn)}
             <UnControlledAccordion titleValue={"Menu"}/>
             <UnControlledAccordion titleValue={"Users"}/>
             <UnControlledRating/>
+
         </div>
     );
 }

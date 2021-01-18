@@ -3,7 +3,7 @@
 import React from 'react';
 import {Meta, Story} from '@storybook/react/types-6-0';
 
-import Accordion, { AccordeonType } from "./Accordeon";
+import Accordion, {AccordionType} from "./Accordeon";
 import {action} from "@storybook/addon-actions";
 
 export default {
@@ -12,11 +12,11 @@ export default {
 } as Meta;
 
 
-const Template: Story<AccordeonType> = (args) => <Accordion {...args} />;
+const Template: Story<AccordionType> = (args) => <Accordion {...args} />;
 
 export const AccordionNotCollapsedExample = Template.bind({});
 AccordionNotCollapsedExample.args = {
-    titleValue: 'Menu',    // Почему не отображается ???
+    titleValue: 'Menu',
     collapsed: false,
     onChange: action("collapsed is changed ")
 };
@@ -27,6 +27,3 @@ AccordionNotCollapsedExample.args = {
     collapsed: true,
     onChange: action("collapsed is changed ")
 };
-
-// При нажатии на UI ничего не меняется
-// Что еще нужно уметь отображать ?

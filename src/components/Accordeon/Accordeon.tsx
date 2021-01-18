@@ -11,7 +11,7 @@ function Accordion(props: AccordionType) {
 
     return (
         <div>
-            <AccordionTitle title={props.titleValue} onChange={ props.onChange} color={props.color} collapsed={props.collapsed}/> // ?
+            <AccordionTitle title={props.titleValue} onChange={ props.onChange} color={props.color} collapsed={props.collapsed}/>
             { !props.collapsed && <AccordionBody/>}
         </div>
     )
@@ -50,6 +50,3 @@ function AccordionBody() {
 }
 
 export default Accordion;
-
-// не смог отобразить color <h3>props.title<> (запутался в пропсах)
-// Ругается на  onChange
