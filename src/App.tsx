@@ -4,8 +4,20 @@ import './App.css';
 function  App() {
     return (
         <div className="App">
-            Hello
-          </div>
+            This is APP component
+        </div>
+    );
+}
+
+function  Rating() {
+    return (
+        <div>
+            <div>start</div>
+            <div>start</div>
+            <div>start</div>
+            <div>start</div>
+            <div>start</div>
+        </div>
     );
 }
 
